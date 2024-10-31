@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
-import 'package:weather/model/weatherModel.dart';
+import 'package:weather/model/weather_model.dart';
 
 class HourlyWeatherListitem extends StatelessWidget {
   final Hour? hour;
@@ -46,14 +46,14 @@ class HourlyWeatherListitem extends StatelessWidget {
           Container(
             height: 30,
             decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Colors.teal),
+                const BoxDecoration(shape: BoxShape.circle, color: Colors.teal),
             child: Image.network(hour?.condition?.icon.toString() ?? ""),
           ),
           Text(
             DateFormat.j().format(DateTime.parse(
               hour?.time?.toString() ?? "",
             )),
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           )
         ],
       ),

@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 import 'package:weather/constants/contants.dart';
-import 'package:weather/model/weatherModel.dart';
+import 'package:weather/model/weather_model.dart';
 
 class Apiservice {
   Future<WeatherModel> getWeatherData(String searchText) async {
-    String url = "$base_url&q=$searchText&days=7";
+    String url = "$baseUrl&q=$searchText&days=7";
 
     try {
       Response response = await get(Uri.parse(url));

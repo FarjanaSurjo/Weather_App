@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:weather/model/weatherModel.dart';
-import 'package:weather/service/apiService.dart';
+import 'package:weather/model/weather_model.dart';
+import 'package:weather/service/api_service.dart';
 import 'package:weather/ui/components/future_forecast_listitem.dart';
 import 'package:weather/ui/components/hourly_weather_listitem.dart';
 import 'package:weather/ui/components/todays_weather.dart';
@@ -23,18 +23,18 @@ class _HomePageState extends State<HomePage> {
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text("Search Location"),
+          title: const Text("Search Location"),
           content: TextField(
             controller: _textFieldController,
-            decoration:
-                InputDecoration(hintText: "Search by city, zip, lat, lang"),
+            decoration: const InputDecoration(
+                hintText: "Search by city, zip, lat, lang"),
           ),
           actions: [
             ElevatedButton(
               onPressed: () {
                 Navigator.pop(context);
               },
-              child: Text("Cancel"),
+              child: const Text("Cancel"),
             ),
             ElevatedButton(
               onPressed: () {
@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
                 }
                 Navigator.pop(context, _textFieldController.text);
               },
-              child: Text("Ok"),
+              child: const Text("Ok"),
             ),
           ],
         );
@@ -68,14 +68,14 @@ class _HomePageState extends State<HomePage> {
                 searchText = text;
               });
             },
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
           ),
           IconButton(
             onPressed: () {
               searchText = "auto:ip";
               setState(() {});
             },
-            icon: Icon(Icons.my_location),
+            icon: const Icon(Icons.my_location),
           ),
         ],
       ),
